@@ -3,17 +3,27 @@ body{
 }
 h1{
     text-align: center;
-    border-bottom: 1px ridge;
+    width: 70%;
+    margin: 20px auto;
+    font-size: 40px;
+    transform: translateY(-150%);
+    animation: title-animation .7s ease-out .5s forwards;
+}
+.line{
+    border-top: 1px ridge;
+    height: 1px;
     width: 70%;
     margin: 30px auto;
-    padding-bottom: 30px;
-    font-size: 40px;
+    transform: scale(0);
+    animation: line-animation .5s linear 2s forwards;
 }
 #table-container{
     margin: auto;
     width: 450px;
     height: 450px;
     border: 1px solid black;
+    transform: scale(0);
+    animation: table-animation .5s linear 1s forwards;
 }
 table{
     width: 100.5%;
@@ -34,7 +44,6 @@ input[type=text]{
     font-size: 150%;
     background: transparent;
     color: white;
-    transition-duration: 1s;
 }
 td{
     border: 1px solid black;
@@ -42,8 +51,7 @@ td{
 #button-container{
     width: 100%;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 60px;
+    margin: 40px auto;
 }
 button{
     width: 8%;
@@ -54,6 +62,14 @@ button{
     border: none;
     background-color: #3276f5;
     transition-duration: .5s;
+    transform: translateY(300%);
+    animation: btn-animation 1s ease-out 1.5s forwards;
+}
+button:first-child{
+    animation-delay: 1.5s;
+}
+button:last-child{
+    animation-delay: 1.8s;
 }
 button:hover{
     cursor: pointer;
@@ -63,4 +79,55 @@ button:hover{
 button:focus{
     outline: none;
     box-shadow: 0 0 3px 5px #0355ec;
+}
+
+@keyframes title-animation {
+    0%{
+        transform: translateY(-100%);
+    }
+    60%{
+        transform: translateY(20%);
+    }
+    80%{
+        transform: translateY(-20%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+@keyframes table-animation {
+    0%{
+        transform: scale(0);
+    }
+    80%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes line-animation {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes btn-animation {
+    0%{
+        transform: translateY(300%);
+    }
+    60%{
+        transform: translateY(-50%);
+    }
+    80%{
+        transform: translateY(60%);
+    }
+    90%{
+        transform: translateY(-10%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
 }

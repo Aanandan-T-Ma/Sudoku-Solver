@@ -6,7 +6,8 @@
     </head>
     <body>
         <h1>Sudoku Solver</h1>
-        <div id="table-container"> 
+        <div class="line"></div>
+        <div id="table-container">
            <table id="table">
              <tr>
                <td><input type="text" id="cell-11" onkeypress="return checkInput(event)" /></td>
@@ -109,6 +110,7 @@
              </tr>
            </table>
         </div>
+        <div class="line"></div>
         <div id="button-container">
           <button type="button" onclick="solveSudoku()">Solve</button>
           <button type="button" onclick="clearAll()">Clear</button>
