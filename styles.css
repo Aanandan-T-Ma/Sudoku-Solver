@@ -16,7 +16,7 @@ h1{
     width: 70%;
     margin: 30px auto;
     transform: scale(0);
-    animation: line-animation .5s linear 2s forwards;
+    animation: line-animation .8s linear 2s forwards;
 }
 #table-container{
     margin: auto;
