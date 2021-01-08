@@ -16,9 +16,13 @@ function checkInput(event){
 }
 
 function clearAll(){
-	for(var i=1;i<=9;i++)
-	  for(var j=1;j<=9;j++)
-		document.getElementById("cell-"+i+j).value = ""   
+	for(var i=1;i<=9;i++){
+		for(var j=1;j<=9;j++){
+			var k = document.getElementById("cell-"+i+j)
+			k.value = ""
+			k.classList.remove('solution')
+		}
+	}
 }
 
 function check(table, i, j, num){
@@ -61,17 +65,23 @@ function solve(table, x, y){
 	return false
 }
 
-function fill(table){
-	var i,j
+function fill(table, question){
+	var i, j, k, delay = 0
 	for(i=0;i<9;i++){
 		for(j=0;j<9;j++){
-			document.getElementById("cell-"+(i+1)+(j+1)).value = table[i][j]
+			if(question[i][j]) continue
+			k = document.getElementById("cell-"+(i+1)+(j+1))
+			k.classList.add('solution')
+			k.style.animationDelay = delay + 's'
+			k.value = table[i][j]
+			delay += .1
 		}
 	}
 }
 
 function solveSudoku(){
-    var table = new Array()
+	var table = new Array()
+	var question = new Array()
     for(var i=1;i<=9;i++){
        var row = new Array()
        for(var j=1;j<=9;j++){
@@ -81,12 +91,23 @@ function solveSudoku(){
          else
            row.push(0)  
        }
-       table.push(row)   
+	   table.push(row)  
+	   question.push(row.slice()) 
 	}
 	if(solvable(table)){
 		solve(table, 0, 0)
-		fill(table)
+		fill(table, question)
 	}
 	else
-	  alert("Unsolvable")
+		showAlert()
+}
+
+function showAlert(){
+	document.getElementById('unsolvable').classList.add('font-enlarge')
+	document.getElementById('unsolvable').style.display = 'block'
+}
+
+function closeAlert(){
+	document.getElementById('unsolvable').classList.remove('font-enlarge')
+	document.getElementById('unsolvable').style.display = 'none'
 }

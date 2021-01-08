@@ -35,7 +35,7 @@ table{
     border: 4px solid black;
     border-collapse: collapse;
 }
-input[type=text]{
+input{
     width: 100%;
     height: 100%;
     border: 0;
@@ -130,5 +130,52 @@ button:focus{
     }
     100%{
         transform: translateY(0%);
+    }
+}
+.solution {
+    opacity: 0;
+    animation: animate-sol 1s linear forwards;
+}
+@keyframes animate-sol {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+#unsolvable {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 1;
+    background-color: #8686f311;
+    cursor: pointer;
+}
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: rgb(157, 247, 247);
+    transform: translate(-50%,-50%);
+}
+.font-enlarge {
+    font-size: 0px;
+    animation: font-animation .6s linear .3s forwards;
+}
+@keyframes font-animation {
+    0% {
+        font-size: 0px;
+    }
+    80% {
+        font-size: 110px;
+    }
+    100% {
+        font-size: 100px;
     }
 }
