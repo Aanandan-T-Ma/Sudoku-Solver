@@ -49,7 +49,6 @@ function solve(table, x, y){
 	for(var i=1;i<=9;i++){
 		if(check(table,x,y,i)){
 			table[x][y] = i
-			//document.getElementById("cell-"+(x+1)+(y+1)).value = i
 			if(solve(table,x,y+1))
 			  return true
 			else table[x][y] = 0

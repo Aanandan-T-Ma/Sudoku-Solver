@@ -1,5 +1,6 @@
 body{
-    background-image: linear-gradient(rgb(200,30,170),rgb(10,60,170));
+    background: linear-gradient(rgb(200,30,170),rgb(10,60,170)) no-repeat center center fixed;
+    background-size: cover;
 }
 h1{
     text-align: center;
@@ -23,7 +24,7 @@ h1{
     height: 450px;
     border: 1px solid black;
     transform: scale(0);
-    animation: table-animation .5s linear 1s forwards;
+    animation: table-animation .8s linear 1s forwards;
 }
 table{
     width: 100.5%;
@@ -62,8 +63,8 @@ button{
     border: none;
     background-color: #3276f5;
     transition-duration: .5s;
-    transform: translateY(300%);
-    animation: btn-animation 1s ease-out 1.5s forwards;
+    transform: translateY(9999px);
+    animation: btn-animation 1.4s ease-out forwards;
 }
 button:first-child{
     animation-delay: 1.5s;
@@ -116,7 +117,7 @@ button:focus{
 }
 @keyframes btn-animation {
     0%{
-        transform: translateY(300%);
+        transform: translateY(1000%);
     }
     60%{
         transform: translateY(-50%);
