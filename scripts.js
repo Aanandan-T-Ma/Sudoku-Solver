@@ -103,6 +103,8 @@ function solveSudoku(){
 }
 
 function showAlert(){
+	if(screen.width < 1195)
+		document.getElementById('text').innerHTML = "It's <br> Unsolvable"
 	document.getElementById('unsolvable').classList.add('font-enlarge')
 	document.getElementById('unsolvable').style.display = 'block'
 }
