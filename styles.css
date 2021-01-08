@@ -156,6 +156,7 @@ button:focus{
     z-index: 1;
     background-color: #8686f311;
     cursor: pointer;
+    text-align: center;
 }
 #text {
     position: absolute;
