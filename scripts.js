@@ -8,7 +8,7 @@ for(var i=3;i<=6;i+=3)
 	
 for(var i=1;i<=9;i++)
   for(var j=1;j<=9;j++)
-	document.getElementById("cell-"+i+j).setAttribute('onkeydown','return checkInput(event)')
+	document.getElementById("cell-"+i+j).setAttribute('onkeypress','return checkInput(event)')
 
 function checkInput(event){
     return (document.getElementById(event.target.id).value.length == 0 && event.code.length == 6 && 
